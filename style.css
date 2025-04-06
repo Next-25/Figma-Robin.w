@@ -21,6 +21,8 @@
 
 }
 
+
+
 * {
     padding: 0;
     margin: 0;
@@ -56,6 +58,10 @@ body {
         'feedback'
         'feedback_form'
         'footer';
+}
+
+input {
+    all: unset;
 }
 
 /* -----------------------Utilities */
@@ -682,6 +688,9 @@ body {
     padding-block: 24px;
     font-weight: 700;
     background-color: var(--color_primary);
+
+    display: block;
+    text-align: center;
     border: 1px var(--color_primary) solid;
     cursor: pointer;
 }
