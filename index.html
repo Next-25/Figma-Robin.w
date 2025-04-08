@@ -28,6 +28,7 @@
 
     <main class="hero">
         <picture>
+            <source srcset="./images/hero-photo.png" media="(width > 1440px)" />
             <source srcset="./images/hero-photo-large.png" media="(width > 767px)" />
             <img class="hero-image" src="./images/hero-photo.png" alt="Photo of Robin Williams">
         </picture>
@@ -122,12 +123,18 @@
     </section>
 
     <section class="skillset-footer">
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer1.png" alt=""></div>
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer2.png" alt=""></div>
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer3.png" alt=""></div>
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer4.png" alt=""></div>
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer5.png" alt=""></div>
-        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image" src="./images/skillset_footer6.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer1.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer2.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer3.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer4.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer5.png" alt=""></div>
+        <div class="skillset-footer-image-wrapper"><img class="skillset-footer-image"
+                src="./images/skillset_footer6.png" alt=""></div>
     </section>
 
     <section class="my_projects container">
@@ -136,7 +143,7 @@
             <h1 class="my_projects-title">Work that I’ve done for the past 8 years</h1>
         </article>
 
-        <article class="my_projects-cards">
+        <!-- <article class="my_projects-cards"> -->
 
             <div class="my_projects-card1">
                 <img class="my_projects-card-image" src="./images/progect1.png" alt="photo notebook">
@@ -175,7 +182,7 @@
                 </div>
             </div>
 
-        </article>
+        <!-- </article> -->
         <div class="my_projects-button-wrapper">
             <a class="my_projects-button" href="#">View all projects</a>
         </div>
@@ -319,6 +326,7 @@
     <script>
 
         function check() {
+
             if (window.matchMedia("(min-width: 768px)").matches) {
                 document.querySelector('.header-nav').classList.remove('hidden');
                 document.querySelector('.header-button').classList.add('hidden-button');
