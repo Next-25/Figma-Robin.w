@@ -414,7 +414,11 @@ input {
 }
 
 .my_projects-card-image {
-    width: 100%;
+    max-width: 624px;
+    max-height: 624px;
+    object-fit: cover;
+    object-position: 50% 20%;
+
 }
 
 .my_projects-button-wrapper {
@@ -498,6 +502,9 @@ input {
 .dribbble-image {
     margin-top: 64px;
     width: 100%;
+    max-height: 464px;
+    object-fit: cover;
+    object-position: top;
 }
 
 .comments-text {
@@ -505,7 +512,7 @@ input {
     flex-direction: column;
 }
 
-.comments {
+.comments-container {
     grid-area: comments;
 }
 
@@ -522,13 +529,6 @@ input {
     color: var(--color_dark-grey);
     font-size: var(--font-size_18);
     margin-bottom: 64px;
-}
-
-.comments-cards {
-    grid-area: comments-cards;
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
 }
 
 .comments-card1,
@@ -802,7 +802,7 @@ input {
             'my_projects my_projects'
             'instagram instagram-image'
             'dribbble dribbble'
-            'comments comments-cards'
+            'comments comments'
             'photography photography'
             'feedback feedback_form'
             'footer footer';
@@ -860,6 +860,35 @@ input {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 24px;
+    }
+
+    .comments-container {
+        display: grid;
+        gap: 48px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'comments-text comments-card2'
+            'comments-card1 comments-card2'
+            'comments-card1 comments-card3'
+            '. comments-card3';
+
+
+    }
+
+    .comments-text {
+        grid-area: comments-text;
+    }
+
+    .comments-card1 {
+        grid-area: comments-card1;
+    }
+
+    .comments-card2 {
+        grid-area: comments-card2;
+    }
+
+    .comments-card3 {
+        grid-area: comments-card3;
     }
 
     .photography-buttons {
