@@ -620,6 +620,7 @@ input {
     gap: 24px;
     opacity: 1;
     transition: all 1s ease-in;
+    justify-content: center;
 }
 
 .photography-image {
@@ -704,6 +705,7 @@ input {
 }
 
 .footer {
+    min-width: 408px;
     width: 100%;
     background-color: var(--color_level-1);
 }
@@ -893,7 +895,6 @@ input {
 
     .footer-inner {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
     }
 
     .footer-nav {
@@ -908,7 +909,8 @@ input {
     }
 
     .footer-description {
-        grid-column: 1 / span 2; /* занимает две колонки */
+        grid-column: 1 / span 2;
+        /* занимает две колонки */
         grid-row: 2;
         text-align: center;
     }
