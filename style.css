@@ -38,6 +38,9 @@ html {
 
 body {
     background-color: var(--color_base);
+}
+
+.site-container {
 
     display: grid;
     grid-template-areas:
@@ -707,13 +710,18 @@ input {
 
 .footer {
     grid-area: footer;
-    display: grid;
-    grid-template-columns: 1fr;
     background-color: var(--color_level-1);
 }
 
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .footer-logo {
-    width: 130.72px;
+    width: 131px;
     height: 40px;
     margin: 48px auto 32px 20px;
 }
@@ -755,7 +763,8 @@ input {
 }
 
 #scroll_top_button {
-    display: none; /* по умолчанию скрыта */
+    display: none;
+    /* по умолчанию скрыта */
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -770,17 +779,19 @@ input {
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.3s;
-  }
+}
 
-  #scroll_top_button:hover {
+#scroll_top_button:hover {
     opacity: 1;
-  }
+}
 
 /*--------------------Media quaries */
 
 @media (width >=768px) {
-    body {
-        grid-template-columns: repeat(2, 1fr);
+    .site-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
             'header header'
             'hero hero'
@@ -859,14 +870,15 @@ input {
         margin: 48px 20px 48px 20px;
     }
 
-    .footer {
+    .footer-inner {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto auto;
     }
 
     .footer-nav {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         padding-top: 100px;
+        padding-right: 20px;
         column-gap: 50px;
     }
 
@@ -885,11 +897,6 @@ input {
 
     .container {
         margin: 48px 72px;
-    }
-
-    body {
-        max-width: 1440px;
-        margin: 0 auto;
     }
 
     .header {
