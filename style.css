@@ -28,6 +28,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Sen", sans-serif;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -149,6 +150,7 @@ input {
 }
 
 .hero-image {
+    object-position: top;
     width: 100%;
 }
 
@@ -379,9 +381,7 @@ input {
     margin-bottom: 16px;
 }
 
-.my_projects-cards {
-
-}
+.my_projects-cards {}
 
 .my_projects-card1,
 .my_projects-card2,
@@ -620,10 +620,13 @@ input {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    opacity: 1;
+    transition: all 1s ease-in;
 }
 
 .photography-image {
     flex: 1;
+    max-width: 330px;
 }
 
 .feedback {
@@ -751,6 +754,29 @@ input {
     margin: 0 20px 48px 20px;
 }
 
+#scroll_top_button {
+    display: none; /* по умолчанию скрыта */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10%;
+    background-color: var(--color_primary);
+    color: var(--color_text-white);
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  #scroll_top_button:hover {
+    opacity: 1;
+  }
+
+
 /*--------------------Media quaries */
 
 @media (width >=768px) {
@@ -793,6 +819,12 @@ input {
         position: relative;
     }
 
+    .hero-image {
+        height: 650px;
+        width: 384px;
+        object-fit: cover;
+    }
+
     .hero-text {
         position: absolute;
         left: 40%;
@@ -830,16 +862,23 @@ input {
 
     .footer {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
     }
 
     .footer-nav {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         padding-top: 100px;
-        column-gap: 100px;
+        column-gap: 50px;
     }
 
     .footer_logo_social_media {
         margin-top: 32px;
+    }
+
+    .footer-description {
+        grid-column: 1 / span 2; /* занимает две колонки */
+        grid-row: 2;
+        text-align: center;
     }
 }
 
@@ -919,24 +958,27 @@ input {
             'mp-card3 mp-button';
     }
 
-    .my_projects-text{
+    .my_projects-text {
         grid-area: mp-text;
     }
 
-    .my_projects-card1{
+    .my_projects-card1 {
         grid-area: mp-card1;
     }
-    .my_projects-card2{
+
+    .my_projects-card2 {
         grid-area: mp-card2;
     }
-    .my_projects-card3{
+
+    .my_projects-card3 {
         grid-area: mp-card3;
     }
-    .my_projects-card4{
+
+    .my_projects-card4 {
         grid-area: mp-card4;
     }
 
-    .my_projects-button-wrapper{
+    .my_projects-button-wrapper {
         grid-area: mp-button;
         margin-bottom: 78px;
     }
@@ -948,7 +990,4 @@ input {
     .feedback_form {
         max-width: 526px;
     }
-
-
-
 }
