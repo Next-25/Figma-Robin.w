@@ -705,8 +705,7 @@ input {
 }
 
 .footer {
-    min-width: 408px;
-    width: 100%;
+    width: 110%;
     background-color: var(--color_level-1);
 }
 
@@ -891,6 +890,10 @@ input {
 
     .feedback_form {
         margin: 48px 20px 48px 20px;
+    }
+
+    .footer {
+        width: 100%;
     }
 
     .footer-inner {
