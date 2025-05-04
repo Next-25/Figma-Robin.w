@@ -414,11 +414,9 @@ input {
 }
 
 .my_projects-card-image {
-    max-width: 624px;
+    max-width: 100%;
     max-height: 624px;
-    object-fit: cover;
-    object-position: 50% 20%;
-
+    object-fit: contain;
 }
 
 .my_projects-button-wrapper {
